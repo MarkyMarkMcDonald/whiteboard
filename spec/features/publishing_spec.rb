@@ -33,7 +33,7 @@ describe "publishing", js: true do
       expect(page).to have_content("There is no content to publish")
     end
 
-    within "div.block.header", text: "NEW FACES" do
+    within ".block-header", text: "NEW FACES" do
       find("i").click
     end
 

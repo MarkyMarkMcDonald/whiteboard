@@ -8,10 +8,10 @@ describe "creating a standup post from the whiteboard", js: true do
   end
 
   def verify_on_items_page
-    expect(page).to have_css('h2.title', text: 'NEW FACES')
-    expect(page).to have_css('h2.title', text: 'HELPS')
-    expect(page).to have_css('h2.title', text: 'INTERESTINGS')
-    expect(page).to have_css('h2.title', text: 'EVENTS')
+    expect(page).to have_css('h2', text: 'NEW FACES')
+    expect(page).to have_css('h2', text: 'HELPS')
+    expect(page).to have_css('h2', text: 'INTERESTINGS')
+    expect(page).to have_css('h2', text: 'EVENTS')
   end
 
   context "when standup is configured for 1-click email & archive" do

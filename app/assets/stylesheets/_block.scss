@@ -1,0 +1,85 @@
+.block {
+  @include flexbox;
+  @include flex-direction(row);
+  padding: 1rem;
+
+  &.errors {
+    @include flex-direction(column);
+
+    ul {
+      @include flexbox;
+    }
+  }
+
+  h1 {
+    padding-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  h2{
+    text-transform: uppercase;
+  }
+  a {
+    @include flexbox;
+  }
+
+  i.icon-plus-sign {
+    color: #fff;
+    font-size: 4rem;
+    line-height: 1;
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+  }
+
+  .field_with_errors {
+    @include flexbox;
+    @include flex(1);
+  }
+}
+
+.block-header {
+  background-color: #333;
+  color: #FFF;
+  padding: 1rem;
+  position: relative;
+}
+
+.new_face .block-header {
+  background-color: #5894B9;
+}
+
+.help .block-header {
+  background-color: #FFB595;
+}
+
+.interesting .block-header {
+  background-color: #FA7D61;
+}
+
+.event .block-header {
+  background-color: #BECB7B;
+}
+
+.block-subheader {
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.item {
+  @include flexbox;
+  @include flex-direction(column);
+  position: relative;
+  line-height: 1.2rem;
+
+  .author {
+    padding-bottom: 8px;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .title {
+    padding-bottom: 8px;
+    margin-right: 42px;
+  }
+}

@@ -1,0 +1,24 @@
+.container-table {
+  @media (min-width: $screen-md) {
+    display: table;
+    width: 100%;
+    border-spacing: 25px;
+  }
+}
+
+.container-table-row {
+  @media (min-width: $screen-md) {
+    display: table-row;
+  }
+}
+
+.container-table-cell {
+  border: 1px solid #DCD0C7;
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-md) {
+    display: table-cell;
+    vertical-align: top;
+    width: 50%;
+  }
+}
