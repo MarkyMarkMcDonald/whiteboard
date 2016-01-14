@@ -65,23 +65,6 @@ a:hover {
   border-top: 1px solid #ccc;
 }
 
-.item {
-  @include flexbox;
-  @include flex-direction(column);
-  position: relative;
-  line-height: 1.2rem;
-
-  .author {
-    padding-bottom: 8px;
-    color: #aaa;
-  }
-
-  .title {
-    padding-bottom: 8px;
-    margin-right: 42px;
-  }
-}
-
 .description {
   padding-top: 0;
   padding-bottom: 0;

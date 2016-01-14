@@ -1,6 +1,7 @@
 .block {
   @include flexbox;
   @include flex-direction(row);
+  padding: 1rem;
 
   &.errors {
     @include flex-direction(column);
@@ -58,4 +59,27 @@
 
 .event .block-header {
   background-color: #BECB7B;
+}
+
+.block-subheader {
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.item {
+  @include flexbox;
+  @include flex-direction(column);
+  position: relative;
+  line-height: 1.2rem;
+
+  .author {
+    padding-bottom: 8px;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .title {
+    padding-bottom: 8px;
+    margin-right: 42px;
+  }
 }

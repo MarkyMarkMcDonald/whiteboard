@@ -12,14 +12,15 @@
     <% if kind.subtitle.present? %>
       <div class="subtitle"><%= kind.subtitle %></div>
     <% end %>
+
     <% if items[kind.name].present? %>
-      <% if kind.name == 'Event' || kind.name == 'New face' %>
-        <% items[kind.name].group_by(&:relative_date).each do |group_name, events| %>
-          <h4 class="subheader <%= group_name %>"><%= group_name.capitalize %></h4>
-          <%= render events %>
+      <% items[kind.name].group_by(&:relative_date).each do |group_name, events| %>
+        <% if kind.name == 'Event' || kind.name == 'New face' %>
+          <h4 class="block-subheader <%= group_name %>"><%= group_name.capitalize %></h4>
         <% end %>
-      <% else %>
-        <%= render items[kind.name] %>
+        <% events.each do |event| %>
+          <%= render partial: 'item', object: event, as: 'item' %>
+        <% end %>
       <% end %>
     <% end %>
   </div>
