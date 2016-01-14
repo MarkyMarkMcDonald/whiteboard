@@ -18,8 +18,9 @@
 @import "sass-flex-mixin";
 @import "layout";
 @import "variables";
+@import "block";
 
-body{
+body {
   color: #5D5C5C;
   margin-top: 65px;
 }
@@ -62,53 +63,6 @@ a:hover {
 
 .border-top {
   border-top: 1px solid #ccc;
-}
-
-.block {
-  @include flexbox;
-  @include flex-direction(row);
-
-  padding: 8px;
-
-  &.header {
-    border-bottom: 1px solid #ccc;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    position: relative;
-  }
-
-  &.errors {
-    @include flex-direction(column);
-
-    ul {
-      @include flexbox;
-    }
-  }
-
-  h1 {
-    padding-bottom: 8px;
-    text-transform: uppercase;
-  }
-
-  h2{
-    text-transform: uppercase;
-  }
-  a {
-    @include flexbox;
-  }
-
-  i.icon-plus-sign {
-    position: absolute;
-    right: 0;
-    line-height: 1.5em;
-    color: #08C;
-    font-size: 2.5rem;
-  }
-
-  .field_with_errors {
-    @include flexbox;
-    @include flex(1);
-  }
 }
 
 .item {

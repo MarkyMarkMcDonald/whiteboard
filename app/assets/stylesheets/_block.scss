@@ -1,0 +1,61 @@
+.block {
+  @include flexbox;
+  @include flex-direction(row);
+
+  &.errors {
+    @include flex-direction(column);
+
+    ul {
+      @include flexbox;
+    }
+  }
+
+  h1 {
+    padding-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  h2{
+    text-transform: uppercase;
+  }
+  a {
+    @include flexbox;
+  }
+
+  i.icon-plus-sign {
+    color: #fff;
+    font-size: 4rem;
+    line-height: 1;
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+  }
+
+  .field_with_errors {
+    @include flexbox;
+    @include flex(1);
+  }
+}
+
+.block-header {
+  background-color: #333;
+  color: #FFF;
+  padding: 1rem;
+  position: relative;
+}
+
+.new_face .block-header {
+  background-color: #5894B9;
+}
+
+.help .block-header {
+  background-color: #FFB595;
+}
+
+.interesting .block-header {
+  background-color: #FA7D61;
+}
+
+.event .block-header {
+  background-color: #BECB7B;
+}

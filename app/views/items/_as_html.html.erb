@@ -4,7 +4,7 @@
   <% end %>
   <div class="<%= kind.name.downcase.tr(' ', '_') %> container-table-cell">
     <div class="block block-header">
-      <h2 class="title"><%= kind.name.pluralize %></h2>
+      <h2 class="h4"><%= kind.name.pluralize %></h2>
       <%= link_to new_standup_item_path(@standup, post_id: @post.try(:id), 'item[kind]' => kind.name), 'data-kind' => kind.name do %>
         <i class="icon-plus-sign"></i>
       <% end %>
