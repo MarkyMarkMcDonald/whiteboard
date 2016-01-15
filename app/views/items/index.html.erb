@@ -1,18 +1,20 @@
 <div class="content-wrapper container">
+  <h1 class="h2 mbs align-center">Standup Items</h1>
   <div class="site-body container-table">
     <%= render partial: 'as_html', locals: {items: @items} %>
   </div>
 
-  <div class='bottom border-top'>
-    <div class='navbar-inner'>
-      <%= link_to 'Presentation', presentation_standup_items_path(@standup), class: 'btn btn-success navbar-btn' %>
-      <%= form_tag "/standups/#{@standup.id}/posts", method: 'post', class: 'navbar-form pull-right' do %>
+  <div class='container-table-match'>
+    <%= link_to 'Presentation', presentation_standup_items_path(@standup), class: 'btn btn-warning navbar-btn align-right mbxl' %>
+    <div class="bg-light bal pvxl phm">
+      <h2 class="h2 mbl align-center">Send Standup Email</h2>
+      <%= form_tag "/standups/#{@standup.id}/posts", method: 'post', class: 'container-form' do %>
           <%= text_field_tag 'post[from]', nil, placeholder: 'Blogger Name(s)' %>
           <%= text_field_tag 'post[title]', nil, placeholder: 'Post Title (eg: Best Standup Ever)', class: 'wide-input' %>
-          <%= submit_tag 'Create Post',
+          <%= submit_tag 'Send Email',
                          data: {confirm: 'This will clear the board and create a new one for tomorrow, you can always get back to this post under the "Posts" menu in the header. Continue?'},
                          id: 'create-post',
-                         class: 'btn btn-warning'
+                         class: 'btn btn-success'
           %>
       <% end %>
     </div>
