@@ -23,7 +23,6 @@
     @include flexbox;
   }
 
-
   .field_with_errors {
     @include flexbox;
     @include flex(1);
