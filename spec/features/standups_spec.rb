@@ -27,7 +27,7 @@ describe "standups", :js do
   it "creates new standups", js: true do
     current_page = current_url
     expect(current_page).to match(/http:\/\/127\.0\.0\.1:\d*\/standups\/\d*/)
-    expect(find('.navbar-fixed-top')).to have_content 'London Whiteboard'
+    expect(find('.navbar-header')).to have_content 'London Whiteboard'
 
     page.find('a.btn.btn-navbar').click if page.has_css?('.btn.btn-navbar')
     page.find('a.posts', text: 'Posts').click
