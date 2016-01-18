@@ -210,40 +210,6 @@ describe "items", js: true do
       expect(page).to have_content "Woohoo"
     end
   end
-
-  describe "the bottom navbar" do
-    context "when the screen width starts at or above 737px" do
-      it "locks to the bottom of the screen but unlocks whenever the width goes below 737px" do
-        page.current_window.resize_to 737, 2000
-
-        login
-        visit '/'
-        click_link(standup.title)
-
-        expect(page.find('div.content-wrapper')).to have_css('.navbar-fixed-bottom')
-        page.current_window.resize_to 736, 2000
-        expect(page.find('div.content-wrapper')).to_not have_css('.navbar-fixed-bottom')
-        page.current_window.resize_to 737, 2000
-        expect(page.find('div.content-wrapper')).to have_css('.navbar-fixed-bottom')
-      end
-    end
-
-    context "when the screen width starts below 737px" do
-      it "is unlocked from the bottom of the screen but locks whenever the width goes above 737px" do
-        page.current_window.resize_to 736, 2000
-
-        login
-        visit '/'
-        click_link(standup.title)
-
-        expect(page.find('div.content-wrapper')).to_not have_css('.navbar-fixed-bottom')
-        page.current_window.resize_to 737, 2000
-        expect(page.find('div.content-wrapper')).to have_css('.navbar-fixed-bottom')
-        page.current_window.resize_to 736, 2000
-        expect(page.find('div.content-wrapper')).to_not have_css('.navbar-fixed-bottom')
-      end
-    end
-  end
 end
 
 def fill_date_selector_with(date)
