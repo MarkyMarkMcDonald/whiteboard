@@ -88,18 +88,18 @@ describe "items", js: true do
     click_link(standup.title)
 
     within '.event' do
-      expect(page).to have_css('.subheader.today', text: 'Today')
+      expect(page).to have_css('.block-subheader', text: 'TODAY')
       expect(page).to have_css('.today + .item', text: 'Happy Hour')
-      expect(page).to have_css('.subheader.tomorrow', text: 'Tomorrow')
+      expect(page).to have_css('.block-subheader', text: 'TOMORROW')
       expect(page).to have_css('.tomorrow + .item', text: 'Baseball')
-      expect(page).to have_css('.subheader.upcoming', text: 'Upcoming')
+      expect(page).to have_css('.block-subheader', text: 'UPCOMING')
       expect(page).to have_css('.upcoming + .item', text: 'Party')
     end
 
     within '.new_face' do
-      expect(page).to have_css('.subheader.today', text: 'Today')
+      expect(page).to have_css('.block-subheader', text: 'TODAY')
       expect(page).to have_css('.today + .item', text: 'Johnathon McKenzie')
-      expect(page).to have_css('.subheader.upcoming', text: 'Upcoming')
+      expect(page).to have_css('.block-subheader', text: 'UPCOMING')
       expect(page).to have_css('.upcoming + .item', text: 'Jane Doe')
     end
 
