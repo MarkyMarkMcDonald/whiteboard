@@ -45,6 +45,10 @@ class Standup < ActiveRecord::Base
     posts.where.not(sent_at: nil).order(:sent_at).reverse_order.limit(1).first.try(:sent_at)
   end
 
+  def last_email_sent_time
+    self.last_email_time.try(:strftime, "Last standup email sent: %-l:%M%p %A %b %-d, %Y")
+  end
+
   private
 
   def standup_time_today

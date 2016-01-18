@@ -23,8 +23,8 @@ describe "creating a standup post from the whiteboard", js: true do
 
       expect(page).to have_content("So so interesting")
 
-      fill_in "Standup host(s)", with: "Me"
-      fill_in "Email subject", with: "empty post"
+      fill_in "Standup Host(s)", with: "Me"
+      fill_in "Email Subject (eg: Best Standup Ever)", with: "empty post"
 
       expect(page).to_not have_content("Last standup email sent: ")
       @message = accept_confirm do
@@ -52,11 +52,11 @@ describe "creating a standup post from the whiteboard", js: true do
 
       expect(page).to have_content("So so interesting")
 
-      fill_in "Blogger Name(s)", with: "Me"
-      fill_in "Post Title (eg: Best Standup Ever)", with: "empty post"
+      fill_in "Standup Host(s)", with: "Me"
+      fill_in "Email Subject (eg: Best Standup Ever)", with: "empty subject"
 
       @message = accept_confirm do
-        click_on "Create Post"
+        click_on "Send Email"
       end
     end
 

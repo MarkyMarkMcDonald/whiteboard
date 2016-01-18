@@ -20,7 +20,7 @@
             <h3 class="block-subheader ptr <%= group_name %>"><%= group_name.capitalize %></h4>
           <% end %>
           <% events.each do |event| %>
-            <%= render partial: 'item', object: event, as: 'item' %>
+            <%= render partial: 'items/item', object: event, as: 'item' %>
           <% end %>
         <% end %>
       <% else %>
