@@ -3,6 +3,9 @@ class ItemsController < ApplicationController
   around_filter :standup_timezone
   respond_to :html, :json
 
+  ONE_CLICK_EMAIL_ENABLED_TEXT = "You are about to send today's stand up email. Continue?"
+  ONE_CLICK_EMAIL_NOT_ENABLED_TEXT = "This will clear the board and create a new one for tomorrow, you can always get back to this post under the \"Posts\" menu in the header. Continue?"
+
   def create
     @item = Item.new(params[:item])
     if @item.save
@@ -23,6 +26,8 @@ class ItemsController < ApplicationController
   def index
     events = Item.events_on_or_after(Time.zone.today, @standup)
     @items = @standup.items.orphans.merge(events)
+
+    @send_email_confirm_message = @standup.one_click_post ? ONE_CLICK_EMAIL_ENABLED_TEXT : ONE_CLICK_EMAIL_NOT_ENABLED_TEXT
     respond_with(@items)
   end
 

@@ -16,6 +16,7 @@ describe "standups", :js do
     fill_in 'standup_closing_message', with: "Woohoo"
     fill_in 'standup_start_time_string', with: '10:00am'
     fill_in 'standup_image_urls', with: 'http://example.com/bar.png'
+    check 'standup_one_click_post'
     click_button 'Create Standup'
 
     click_link('All Standups')
@@ -26,7 +27,7 @@ describe "standups", :js do
   it "creates new standups", js: true do
     current_page = current_url
     expect(current_page).to match(/http:\/\/127\.0\.0\.1:\d*\/standups\/\d*/)
-    expect(find('.navbar-fixed-top')).to have_content 'London Whiteboard'
+    expect(find('.navbar-header')).to have_content 'London Whiteboard'
 
     page.find('a.btn.btn-navbar').click if page.has_css?('.btn.btn-navbar')
     page.find('a.posts', text: 'Posts').click
@@ -41,6 +42,7 @@ describe "standups", :js do
     expect(page).to have_css('input[value="all@pivotallabs.com"]')
     expect(page).to have_css('input[value="Woohoo"]')
     expect(page).to have_css('option[value="Mountain Time (US & Canada)"][selected]')
+    expect(page).to have_css('input[name="standup[one_click_post]"][checked="checked"]')
     expect(page).to have_css('input[value="10:00am"]')
   end
 
